@@ -1,0 +1,38 @@
+Assignment: Build a Full-Stack Resume Analyzer
+1. Objective
+Your task is to design, build, and deploy a full-stack web application, the "Resume Analyzer." This application will serve as a tool for users to upload their resumes, receive automated analysis, and get AI-driven feedback for improvement.
+2. Core Requirements
+The application must be built using ReactJS for the frontend and Node.js (with Express.js) for the backend, communicating via a REST API. The database should be a SQL database, such as PostgreSQL.
+The application will have two main features, organized into separate tabs in the UI:
+Tab 1: Live Resume Analysis
+File Upload: Create a user interface that allows users to upload a resume in PDF format.
+Backend Processing:
+The backend API must receive the uploaded PDF.
+It should parse the PDF to extract its raw text content.
+This text must be sent to the Google Gemini LLM to extract structured information.
+Data Extraction & Analysis: The API, powered by the LLM, must return a structured JSON object containing, at a minimum:
+Personal Details: Name, Email, Phone, LinkedIn/Portfolio URLs.
+Resume Content: Summary/Objective, Work Experience, Education, Projects, Certifications.
+Skills: A clear distinction between Technical Skills and Soft Skills.
+AI-Generated Feedback:
+A resume rating (e.g., on a scale of 1-10).
+A summary of specific improvement areas.
+A list of suggested skills to learn for upskilling, relevant to the user's profile.
+Database Storage: Upon successful analysis, the extracted JSON data must be saved as a new record in your SQL database.
+Frontend Display: The structured data and AI feedback must be displayed to the user in a clean, organized, and easy-to-read UI.
+Tab 2: Historical Viewer
+Data Display: This tab must fetch all previously analyzed resumes from the database and display them in a neat table. The table should show key information like the person's name, email, and the original file name.
+Details Modal: Each row in the table must have a "Details" button. Clicking this button should open a modal window that displays the full, detailed analysis for that specific resume, reusing the same UI components from the first tab.
+3. Submission and Evaluation
+Submission Checklist:
+A public GitHub repository containing the complete source code for both the frontend and backend.
+A sample_data/ folder in the repository containing a few different resume PDFs that you used for testing.
+A screenshots/ folder showing all major UI pages (the upload tab, the results view, the history table, and the details modal).
+A comprehensive README.md file with clear instructions on how to set up and run the project locally.
+Evaluation Criteria:
+Code Quality: Modularity, readability, and adherence to best practices for React and Node.js.
+Functionality: All specified features must work correctly and reliably.
+Data Extraction Quality: Accuracy and completeness of the information extracted from resumes.
+AI-Powered Insights: The depth and relevance of the AI-generated feedback (improvement areas and upskill suggestions).
+UI/UX: The application should be intuitive, user-friendly, and visually appealing.
+Error Handling: The application should gracefully handle potential errors (e.g., invalid file types, failed API calls, database issues).
